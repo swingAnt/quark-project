@@ -1,0 +1,148 @@
+.title {
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 14px;
+    color: #4c6072;
+}
+.container {
+    :global(.ap-plus) {
+        cursor: pointer;
+    }
+    .panel {
+        .panelTitle {
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(76, 96, 114, 1);
+        }
+    }
+    overflow-y: auto;
+    :global(.ant-collapse-borderless) {
+        background: none;
+    }
+    :global(.ant-tabs) {
+        height: calc(100% - 42px);
+
+        :global(.ant-tabs-bar) {
+            height: 26px;
+            margin: 0;
+
+            :global(.ant-tabs-nav-container) {
+                height: 100%;
+                padding: 0;
+
+                :global(.ant-tabs-tab-arrow-show) {
+                    display: none;
+                }
+
+                :global(.ant-tabs-nav-wrap) {
+                    height: 100%;
+
+                    :global(.ant-tabs-nav-scroll) {
+                        height: 100%;
+
+                        :global(.ant-tabs-nav) {
+                            height: 100%;
+                            width: 100%;
+
+                            & > div {
+                                display: flex;
+
+                                :global(.ant-tabs-tab) {
+                                    height: 26px;
+                                    line-height: 26px;
+                                    margin: 0;
+                                    border-radius: 0;
+                                    border-top: 1px solid #dcdfe6;
+                                    border-right: 1px solid #dcdfe6;
+                                    border-left: 0;
+                                    width: 67px;
+                                    text-align: center;
+                                    background-color: #eeeeee;
+                                    flex: 1 1;
+                                    padding: 0 5px;
+
+                                    &.ant-tabs-tab-active {
+                                        // background-color: #f6f6f6;
+                                        background-color: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        :global(.ant-tabs-content) {
+            overflow-y: auto;
+            height: calc(100% - 26px);
+
+            :global(.ant-collapse) {
+                // background-color: #f6f6f6;
+
+                :global(.ant-collapse-item) {
+                    :global(.ant-collapse-header) {
+                        padding: 8px 0 8px 40px;
+                        display: flex;
+                        align-items: center;
+
+                        :global(.anticon) {
+                            margin-right: 10px;
+                        }
+
+                        :global(.panel-header-content) {
+                            color: #54698d;
+                            margin-right: 5px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: inline-block;
+                            width: 100%;
+                            & > span {
+                                float: left;
+                            }
+                            :global(.ap) {
+                                font-size: 14px;
+                                float: right;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    :global(.panel-header-with-checkbox, .panel-checkbox) {
+                        flex: auto;
+                        padding-right: 10px;
+                        color: #54698d;
+                        display: flex;
+                        justify-content: space-between;
+
+                        :global(.title) {
+                            display: inline-block;
+                        }
+                    }
+
+                    :global(.ant-collapse-content-box) {
+                        padding: 0;
+
+                        :global(.filter-button) {
+                            width: 90%;
+                            margin: 5px 5% 10px 5%;
+                        }
+
+                        :global(.them-picture-setting) {
+                            padding: 0 19px;
+                            margin-bottom: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

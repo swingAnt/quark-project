@@ -1,0 +1,401 @@
+@longitudinal-width: 30%;
+@transverse-width: 40%;
+@transverse-height: 30%;
+@center-height: 40%;
+
+.pane-boxs {
+    position: relative;
+    float: left;
+    user-select: none;
+    overflow: hidden;
+
+    .fold-button {
+        position: absolute;
+        z-index: 1000;
+
+        &:hover {
+            .ap-shouqi1 {
+                display: block;
+            }
+
+            .ap-anglepointingtodown-copy {
+                display: block;
+            }
+        }
+
+        cursor: pointer;
+
+        &.top {
+            left: calc(~"50% - 30px");
+            top: 0;
+            height: 20px;
+            width: 60px;
+
+            .ap-shouqi1 {
+                top: -3px;
+                left: 8px;
+            }
+
+            .ap-anglepointingtodown-copy {
+                top: -3px;
+                left: 20px;
+            }
+        }
+
+        &.right {
+            right: 0;
+            top: calc(~"50% - 30px");
+            height: 60px;
+            width: 20px;
+
+            .ap-shouqi1 {
+                top: 16px;
+                left: -10px;
+                transform: rotate(90deg);
+            }
+
+            .ap-anglepointingtodown-copy {
+                transform: rotate(90deg);
+                top: 16px;
+                left: 5px;
+            }
+        }
+
+        &.bottom {
+            left: calc(~"50% - 30px");
+            bottom: 0;
+            height: 20px;
+            width: 60px;
+
+            .ap-shouqi1 {
+                top: 0px;
+                left: 8px;
+                transform: rotate(180deg);
+            }
+
+            .ap-anglepointingtodown-copy {
+                transform: rotate(180deg);
+                top: 1px;
+                left: 21px;
+            }
+        }
+
+        &.left {
+            left: 0;
+            top: calc(~"50% - 30px");
+            height: 60px;
+            width: 20px;
+
+            .ap-shouqi1 {
+                transform: rotate(270deg);
+                top: 16px;
+                left: -13px;
+            }
+
+            .ap-anglepointingtodown-copy {
+                transform: rotate(270deg);
+                top: 16px;
+            }
+        }
+
+        .ap-shouqi1 {
+            display: none;
+            color: #dbe0e5;
+            position: absolute;
+        }
+
+        .ap-anglepointingtodown-copy {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+        }
+    }
+
+    .no-area {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        flex-direction: column;
+
+        img {
+            height: 50%;
+            max-height: 300px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #999999;
+            margin-top: 16px;
+        }
+    }
+
+    &.full {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: #fff;
+
+        .canvas-page-background {
+            height: 100% !important;
+            width: 100% !important;
+        }
+        .operations {
+            .ap-UNfull {
+                display: inline-block !important;
+            }
+        }
+    }
+    &.isMagnet {
+        position: fixed !important;
+        top: 67px !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: #fff;
+
+        .canvas-page-background {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .operations {
+            .ap-UNfull {
+                display: inline-block;
+            }
+        }
+    }
+    .split-line {
+        z-index: 999;
+        float: left;
+        background: #c7c7c7;
+        user-select: none;
+        width: 100%;
+        height: 2px;
+        margin: 1px 0;
+        cursor: row-resize;
+        opacity: 0.3;
+
+        &:hover {
+            background: #b5b1b1;
+            height: 4px;
+            margin: 0;
+        }
+
+        &.isVertical {
+            width: 2px;
+            height: 100%;
+            margin: 0 1px;
+            cursor: col-resize;
+
+            &:hover {
+                background: #b5b1b1;
+                width: 4px;
+                margin: 0;
+            }
+        }
+    }
+
+    .operations {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+
+        i.ap {
+            font-size: 20px;
+            cursor: pointer;
+            color: #afafaf;
+            margin-left: 10px;
+            padding: 2px;
+        }
+
+        .ap-UNfull {
+            display: none;
+        }
+
+        .operation-state-drill-links {
+            color: #4a4a4a;
+            font-size: 12px;
+
+            .ap {
+                font-size: 14px;
+                color: #54698d;
+                margin-right: 3px;
+            }
+
+            .ap-caret-down-small {
+                display: none;
+            }
+
+            &.ant-dropdown-trigger {
+                .ap-caret-down-small {
+                    padding-left: 3px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    &.area-container {
+        .ant-spin-nested-loading {
+            height: 100%;
+
+            & > div > .ant-spin {
+                max-height: unset !important;
+            }
+        }
+
+        .ant-spin-container {
+            height: 100%;
+        }
+
+        &.edit {
+            &:hover {
+                outline: #fa9d98 solid 1px;
+                outline-offset: -1px;
+
+                & > .operations {
+                    display: block;
+                }
+            }
+
+            &.active {
+                outline: #afafaf solid 2px;
+                outline-offset: -2px;
+            }
+        }
+    }
+
+   
+
+    .mouse-top-part {
+        width: @transverse-width;
+        height: @transverse-height;
+        position: absolute;
+        top: 0;
+        left: @longitudinal-width;
+        z-index: 1;
+    }
+
+    .mouse-right-part {
+        width: @longitudinal-width;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: @transverse-width + @longitudinal-width;
+        z-index: 1;
+    }
+
+    .mouse-bottom-part {
+        width: @transverse-width;
+        height: @transverse-height;
+        position: absolute;
+        top: @transverse-height + @center-height;
+        left: @longitudinal-width;
+        z-index: 1;
+    }
+
+    .mouse-left-part {
+        width: @longitudinal-width;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .mouse-center-part {
+        width: @transverse-width;
+        height: @center-height;
+        position: absolute;
+        top: @transverse-height;
+        left: @longitudinal-width;
+        z-index: 1;
+
+        &.empty {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .position-part {
+        border: 2px solid #a7d5ff;
+        background: #c2ecff;
+        opacity: 0.5;
+        position: absolute;
+        z-index: 10000;
+
+        &.top-part {
+            width: 100%;
+            height: 50%;
+            top: 0;
+            left: 0;
+        }
+
+        &.right-part {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 50%;
+        }
+
+        &.bottom-part {
+            width: 100%;
+            height: 50%;
+            top: 50%;
+            left: 0;
+        }
+
+        &.left-part {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        &.center-part {
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+        }
+    }
+}
+
+.pane-boxs {
+    .response-layer {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 200;
+        top: 0;
+        left: 0;
+
+        & > div {
+            z-index: 2;
+        }
+
+        & > .position-part {
+            z-index: 1;
+        }
+    }
+}
+.area-instance-show{
+    height: 100%;
+    width: 100%; 
+}
