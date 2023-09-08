@@ -39,7 +39,7 @@ class MyComponent extends QuarkElement {
           </a>
         </div>
 
-        <h1>Quark - {this.text}</h1>
+        <h1>test - {this.text}</h1>
 
         <div className="card">
           <button onClick={this.add}>count is: {this.count}</button>
