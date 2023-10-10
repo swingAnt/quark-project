@@ -1,5 +1,5 @@
 {
-  "name": "quarkc-project",
+  "name": "swing-ant",
   "version": "0.0.1",
   "scripts": {
     "dev": "npm run start",
@@ -24,6 +24,8 @@
     "web components"
   ],
   "dependencies": {
+    "classnames": "^2.3.2",
+    "lodash": "^4.17.21",
     "quarkc": "^1.0.17"
   },
   "devDependencies": {
