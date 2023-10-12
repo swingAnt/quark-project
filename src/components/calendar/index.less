@@ -1,0 +1,75 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.calendar-weekdays {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.weekday {
+  width: 14.2857%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendar-days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.calendar-day {
+  width: 14.2857%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  // border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+.choose{
+  border-radius: 50%;
+  color: #fff;
+  background: #aeabab;
+
+}
+.disabled{
+  color: rgb(125 121 121 / 34%);
+}
+.span{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// .weekday:nth-child(7n+7),
+// .calendar-day:nth-child(7n+7) {
+//   color: red; /* Highlight Sundays */
+// }
+
+.empty-day {
+  width: 14.2857%;
+}
+.dot{
+  height: 3px;
+  color: #aeabab;;
+}

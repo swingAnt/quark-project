@@ -79,6 +79,7 @@ class Clock extends QuarkElement {
 			}
 			// time()
 			setInterval(time,1000)
+			
 
   }
 
@@ -131,3 +132,4 @@ class Clock extends QuarkElement {
   }
 }
 
+export default Clock;
