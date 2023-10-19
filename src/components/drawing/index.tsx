@@ -53,6 +53,7 @@ class DrawingBoard extends QuarkElement {
 		const context = canvas.getContext('2d');
 		this.ctx = context
 
+
 	}
 
 
@@ -136,7 +137,6 @@ class DrawingBoard extends QuarkElement {
 		const canvas = this.canvasRef.current;
 		const showDataURL = this.history[this.history.length - 2];
 		const lastDataURL = this.history[this.history.length - 1];
-
 		const img = new Image();
 		img.src = showDataURL;
 		img.onload = () => {
@@ -146,6 +146,12 @@ class DrawingBoard extends QuarkElement {
 			this.history = this.history.slice(0, this.history.length - 1)
 
 		};
+		if (!showDataURL) {
+			this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+			this.ctx.drawImage(img, 0, 0);
+			this.redoHistory = [...this.redoHistory, lastDataURL]
+			this.history = this.history.slice(0, this.history.length - 1)
+		}
 	};
 
 	redo = () => {
@@ -172,8 +178,8 @@ class DrawingBoard extends QuarkElement {
 	render() {
 
 		return (
-			<div className="draw-board" style={{width: this.width ? this.width + 40 : '0',height:this.height}}>
-  <canvas
+			<div className="draw-board" style={{ width: this.width ? this.width + 40 : '0', height: this.height }}>
+				<canvas
 					ref={this.canvasRef}
 					width={this.width}
 					height={this.height}
@@ -182,24 +188,23 @@ class DrawingBoard extends QuarkElement {
 					onMouseUp={this.stopDrawing}
 					style={this.isErasing ? {
 						// cursor:'url(${clean}) 20px 20px, auto'
-						cursor: 'pointer'
+						cursor: 'cell'
 					} : {
-						cursor: 'crosshair',
+						cursor: 'progress',
 					}}
 
 				/>
 				<div className="tools">
-				<div className='font'>颜色：<input className='color' type="color" value={this.color} onChange={this.changeColor} /></div>
-				<div className='font'>线宽：<input className='input' type="number" min="1" max="10" value={this.lineWidth} onChange={this.changeLineWidth} /></div>
-				<div className='font'>虚线:<input className='input' width='20px' type="text" onChange={this.changeLineDash} /></div>
-				<img src={svg}  onClick={this.exportAsSVG} title="导出svg" style={{cursor:"pointer"}}/>
-				<img src={png}  onClick={this.exportAsPNG} title="导出png" style={{cursor:"pointer"}}/>
-				<img src={go}  onClick={this.undo} title="上一步" style={{cursor:"pointer"}}/>
-				<img src={back}  onClick={this.redo} title="下一步" style={{cursor:"pointer"}}/>
-				<img src={clean}  onClick={this.erase} title="橡皮擦" style={{cursor:"pointer"}}/>
-
+					<div className='font'>颜色：<input className='color' type="color" value={this.color} onChange={this.changeColor} /></div>
+					<div className='font'>线宽：<input className='input' type="number" min="1" max="10" value={this.lineWidth} onChange={this.changeLineWidth} /></div>
+					<div className='font'>虚线:<input className='input' width='20px' type="text" onChange={this.changeLineDash} /></div>
+					<img src={svg} onClick={this.exportAsSVG} title="导出svg" style={{ cursor: "pointer" }} />
+					<img src={png} onClick={this.exportAsPNG} title="导出png" style={{ cursor: "pointer" }} />
+					<img src={back} onClick={this.undo} title="上一步" style={{ cursor: "pointer" }} />
+					<img src={go} onClick={this.redo} title="下一步" style={{ cursor: "pointer" }} />
+					<img src={clean} onClick={this.erase} title="橡皮擦" style={{ cursor: "pointer" }} />
 				</div>
-			
+
 			</div>
 		);
 	}
