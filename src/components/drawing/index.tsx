@@ -198,11 +198,11 @@ class DrawingBoard extends QuarkElement {
 					<div className='font'>颜色：<input className='color' type="color" value={this.color} onChange={this.changeColor} /></div>
 					<div className='font'>线宽：<input className='input' type="number" min="1" max="10" value={this.lineWidth} onChange={this.changeLineWidth} /></div>
 					<div className='font'>虚线:<input className='input' width='20px' type="text" onChange={this.changeLineDash} /></div>
-					<img src={svg} onClick={this.exportAsSVG} title="导出svg" style={{ cursor: "pointer" }} />
-					<img src={png} onClick={this.exportAsPNG} title="导出png" style={{ cursor: "pointer" }} />
-					<img src={back} onClick={this.undo} title="上一步" style={{ cursor: "pointer" }} />
-					<img src={go} onClick={this.redo} title="下一步" style={{ cursor: "pointer" }} />
-					<img src={clean} onClick={this.erase} title="橡皮擦" style={{ cursor: "pointer" }} />
+					<img src={'https://storage.360buyimg.com/jdcp-web/fonts/svg.png'} onClick={this.exportAsSVG} title="导出svg" style={{ cursor: "pointer" }} />
+					<img src={'https://storage.360buyimg.com/jdcp-web/fonts/png.png'} onClick={this.exportAsPNG} title="导出png" style={{ cursor: "pointer" }} />
+					<img src={'https://storage.360buyimg.com/jdcp-web/fonts/back.png'} onClick={this.undo} title="上一步" style={{ cursor: "pointer" }} />
+					<img src={'https://storage.360buyimg.com/jdcp-web/fonts/go.png'} onClick={this.redo} title="下一步" style={{ cursor: "pointer" }} />
+					<img src={'https://storage.360buyimg.com/jdcp-web/fonts/clean.png'} onClick={this.erase} title="橡皮擦" style={{ cursor: "pointer" }} />
 				</div>
 
 			</div>
