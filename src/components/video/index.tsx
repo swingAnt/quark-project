@@ -246,7 +246,8 @@ class Video extends QuarkElement {
 	height = 600
 	@property({ type: String }) // 外部属性
 	url = ''//播放链接
-	bg:""//背景图片
+	@property({ type: String }) // 外部属性
+	bg=""//背景图片
 	@state()
 	player=null
 	videoRef: any = createRef()
@@ -414,6 +415,8 @@ class Video extends QuarkElement {
 
 
   render() {
+console.log('this.bg',this.bg);
+	
     return (
 		<div ref={this.domRef} className="video-board" style={{ width: this.width ? this.width : '0', height: this.height }}>
 
