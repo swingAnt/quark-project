@@ -1,0 +1,70 @@
+@import "play.css";
+.video-board {
+	margin: 20px auto;
+	// width: 600px;
+}
+video {
+	width: 100%;
+}/* 替换播放按钮图标 */
+.plyr__controls__item,plyr__control[data-plyr="play"] svg{
+	.icon--not-pressed{
+		background-image: url('https://storage.360buyimg.com/cjwl/media/start.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.icon--pressed {
+		background-image: url('https://storage.360buyimg.com/cjwl/media/stop1.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+.plyr__control.plyr__control--overlaid[data-plyr="play"] svg{
+  background-image: url('https://storage.360buyimg.com/cjwl/media/start.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 替换暂停按钮图标 */
+.plyr__control--overlaid.plyr__control--pause::before {
+	background-image: url('https://storage.360buyimg.com/cjwl/media/stop.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* 替换音量按钮图标 */
+.plyr__control[data-plyr="mute"] svg.icon--not-pressed {
+	background-image: url('https://storage.360buyimg.com/cjwl/media/voice.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.plyr__control[data-plyr="mute"] svg.icon--pressed {
+	background-image: url('https://storage.360buyimg.com/cjwl/media/novoice.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/* 替换全屏按钮图标 */
+.plyr__controls__item.plyr__control[data-plyr="fullscreen"] svg.icon--not-pressed {
+	background-image: url('https://storage.360buyimg.com/cjwl/media/open.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.plyr__controls__item.plyr__control[data-plyr="fullscreen"] svg.icon--pressed{
+
+	background-image: url('https://storage.360buyimg.com/cjwl/media/exit.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+/* 替换设置按钮图标 */
+.plyr__control[data-plyr="settings"] svg {
+	background-image: url('https://storage.360buyimg.com/cjwl/media/setting.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/* 替换画中画按钮图标 */
+.plyr__control[data-plyr="pip"] svg {
+	background-image: url('https://storage.360buyimg.com/cjwl/media/picture.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}

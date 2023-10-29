@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <!-- Icons -->
+      <link rel="icon" href="https://cdn.plyr.io/static/icons/favicon.ico" />
+      <link rel="icon" type="image/png" href="https://cdn.plyr.io/static/icons/32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="https://cdn.plyr.io/static/icons/16x16.png" sizes="16x16" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.plyr.io/static/icons/180x180.png" />
+  
+      <!-- Open Graph -->
+      <meta property="og:title" content="Plyr - A simple, customizable HTML5 Video, Audio, YouTube and Vimeo player" />
+      <meta property="og:site_name" content="Plyr" />
+      <meta property="og:url" content="https://plyr.io" />
+      <meta property="og:image" content="https://cdn.plyr.io/static/icons/1200x630.png" />
+  
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@sam_potts" />
+      <meta name="twitter:creator" content="@sam_potts" />
+      <meta name="twitter:card" content="summary_large_image" />
+  
+      <!-- Docs styles -->
+  
+      <!-- Preload -->
+      <link
+        rel="preload"
+        as="font"
+        crossorigin
+        type="font/woff2"
+        href="https://cdn.plyr.io/static/fonts/gordita-medium.woff2"
+      />
+      <link
+        rel="preload"
+        as="font"
+        crossorigin
+        type="font/woff2"
+        href="https://cdn.plyr.io/static/fonts/gordita-bold.woff2"
+      />
     <meta charset="UTF-8" />
     <title>Quark</title>
     <!-- <script type="module" src="./src/index.tsx"></script>
     <script type="module" src="./src/components/Clock/index.tsx"></script> -->
     <script type="module" src="./src/index.tsx"></script>
-
     <style>
       body {
         margin: 0;
@@ -25,6 +59,16 @@
     <!-- <board-component text="为跨技术栈而生！"></board-component> -->
     <!-- <sw-clock ></sw-clock>  -->
     <!-- <sw-calendar ></sw-calendar>  -->
-    <sw-drawing width="600" height="600"></sw-drawing>
+    <!-- <sw-drawing width="600" height="600"></sw-drawing> -->
+
+    <!-- url:"https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4",
+    url:"https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
+    url:"http://mqiptv.com:8014/ch/cctv8/mqlive.m3u8" -->
+    <sw-video  width="600" height="600" url="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3"></sw-video> 
+
+    <!-- <sw-video  width="600" height="600" url="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" bg=""https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg""></sw-video>  -->
+    <!-- <sw-video  width="600" height="600" url="http://mqiptv.com:8014/ch/cctv8/mqlive.m3u8"></sw-video>  -->
+    
+        <!-- <sw-video  width="600" height="600" url="https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"></sw-video>  -->
   </body>
 </html>

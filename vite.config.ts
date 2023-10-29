@@ -2,11 +2,10 @@
 // https://vitejs.dev/config/
 import { defineConfig } from 'vite';
 import * as path from 'path'
-// import devtools from 'solid-devtools/vite';
+
 
 export default defineConfig({
   plugins: [
-
   ],
   resolve:{
     alias:{
@@ -15,7 +14,7 @@ export default defineConfig({
 
   },
   server: {
-    port: 9999,
+    port: 3000,
   },
   build: {
     target: 'esnext',

@@ -1,0 +1,9 @@
+@import './play.css';
+.my-input {
+    @apply input-styles;
+  }
+  
+  /* 定义样式集合 */
+  @custom-media --button-styles {
+    @apply third-party-button-styles;
+  }
