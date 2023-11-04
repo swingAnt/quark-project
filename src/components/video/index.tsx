@@ -242,8 +242,8 @@ declare global {
 class Video extends QuarkElement {
 	@property({ type: Number }) // 外部属性
 	width = 800
-	@property({ type: Number }) // 外部属性
-	height = 600
+	@property({ type:Number}) // 外部属性
+	height = 'auto'
 	@property({ type: String }) // 外部属性
 	url = ''//播放链接
 	@property({ type: String }) // 外部属性
@@ -319,7 +319,7 @@ class Video extends QuarkElement {
 	//画面质量
 		quality: {
 		  default: 720,
-		  options: [720, 480, 360], // 根据需要设置不同分辨率的选项
+		  options: [2160,1080,720, 480, 360], // 根据需要设置不同分辨率的选项
 		  forced: true,
 		  onChange: (e) => {
 			// console.log('当前视频质量：', e.target.value);
